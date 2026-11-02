@@ -21,13 +21,12 @@ export default function ArtworksPage() {
             setData(data.filter((art) => art.primaryimageurl));
         }
 
-        fetchData().then(()=>console.log("yay"))
-            .catch((e)=>console.log("This error occurred: "+e))
+        fetchData().catch(() => setError("Could not load artwork."));
         }, []);
 
     return (
         <main>
-            <h1>Artwork Collection</h1>
+            {error ? <p>{error}</p> : null}
             <Artworks data={data} />
         </main>
     );
