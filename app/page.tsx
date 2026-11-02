@@ -8,7 +8,9 @@ import styled from "styled-components";
 
 const ArtDiv = styled.div`
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     padding: 3%;
     background-color: white;
 
@@ -48,6 +50,7 @@ export default function Home() {
             {data.map((art) =>
                 <img key={art.id} src={art.primaryimageurl || ""} alt={art.title || "Artwork"}/>
             )}
+            <h3>See our greatest works in Harvard Art Museum</h3>
         </ArtDiv>
     );
 }
